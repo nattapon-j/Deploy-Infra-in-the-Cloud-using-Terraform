@@ -5,7 +5,7 @@
 
 provider "azurerm" {
   features {
-    
+
   }
 }
 
@@ -19,6 +19,8 @@ terraform {
 }
 
 resource "azurerm_resource_group" "rg" {
-  name     = "myFirstResourceGroup"
+  name = "myFirstResourceGroup"
+  # name     = "myFirstResourceGroup1"
+  # name     = "myFirstResourceGroup2"
   location = "westeurope"
 }
