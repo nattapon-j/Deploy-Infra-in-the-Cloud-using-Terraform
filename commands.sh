@@ -15,6 +15,9 @@ terraform plan -h
 terraform plan -var "variable_name=value"
 terraform plan -var "resource_group_name=my-resource-group"
 
+terraform plan -out tfplan
+terraform show -json tfplan
+
 # Deploy Terraform infra
 terraform apply
 

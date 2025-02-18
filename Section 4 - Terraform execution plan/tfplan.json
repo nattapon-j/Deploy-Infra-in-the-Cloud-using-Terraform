@@ -1,0 +1,1771 @@
+{
+    "format_version": "1.2",
+    "terraform_version": "1.10.5",
+    "variables": {
+        "app_service_name": {
+            "value": "nattapon-app-service-01"
+        },
+        "app_service_plan_name": {
+            "value": "example-appserviceplan"
+        },
+        "resource_group_location": {
+            "value": "west europe"
+        },
+        "resource_group_name": {
+            "value": "example-resources"
+        }
+    },
+    "planned_values": {
+        "outputs": {
+            "webapp_ips": {
+                "sensitive": false
+            },
+            "webapp_url": {
+                "sensitive": false
+            }
+        },
+        "root_module": {
+            "resources": [
+                {
+                    "address": "azurerm_app_service.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                        "app_settings": {
+                            "SOME_KEY": "some-value"
+                        },
+                        "backup": [],
+                        "client_affinity_enabled": false,
+                        "client_cert_enabled": false,
+                        "connection_string": [
+                            {
+                                "name": "Database",
+                                "type": "SQLServer",
+                                "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                            }
+                        ],
+                        "enabled": true,
+                        "https_only": false,
+                        "identity": [],
+                        "location": "westeurope",
+                        "name": "nattapon-app-service-01",
+                        "resource_group_name": "example-resources",
+                        "site_config": [
+                            {
+                                "acr_use_managed_identity_credentials": false,
+                                "acr_user_managed_identity_client_id": null,
+                                "always_on": false,
+                                "app_command_line": null,
+                                "auto_swap_slot_name": null,
+                                "default_documents": null,
+                                "dotnet_framework_version": "v4.0",
+                                "health_check_path": null,
+                                "http2_enabled": false,
+                                "java_container": null,
+                                "java_container_version": null,
+                                "java_version": null,
+                                "php_version": null,
+                                "python_version": null,
+                                "remote_debugging_enabled": false,
+                                "scm_type": "LocalGit",
+                                "scm_use_main_ip_restriction": false,
+                                "use_32_bit_worker_process": null
+                            }
+                        ],
+                        "tags": null,
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "app_settings": {},
+                        "auth_settings": [],
+                        "backup": [],
+                        "connection_string": [
+                            {}
+                        ],
+                        "identity": [],
+                        "logs": [],
+                        "outbound_ip_address_list": [],
+                        "possible_outbound_ip_address_list": [],
+                        "site_config": [
+                            {
+                                "cors": [],
+                                "ip_restriction": [],
+                                "scm_ip_restriction": []
+                            }
+                        ],
+                        "site_credential": [],
+                        "source_control": [],
+                        "storage_account": []
+                    }
+                },
+                {
+                    "address": "azurerm_app_service_plan.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service_plan",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "app_service_environment_id": "",
+                        "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                        "is_xenon": false,
+                        "kind": "Windows",
+                        "location": "westeurope",
+                        "maximum_elastic_worker_count": 1,
+                        "maximum_number_of_workers": 10,
+                        "name": "example-appserviceplan",
+                        "per_site_scaling": false,
+                        "reserved": false,
+                        "resource_group_name": "example-resources",
+                        "sku": [
+                            {
+                                "capacity": 1,
+                                "size": "S1",
+                                "tier": "Standard"
+                            }
+                        ],
+                        "tags": {},
+                        "timeouts": null,
+                        "zone_redundant": false
+                    },
+                    "sensitive_values": {
+                        "sku": [
+                            {}
+                        ],
+                        "tags": {}
+                    }
+                },
+                {
+                    "address": "azurerm_resource_group.example",
+                    "mode": "managed",
+                    "type": "azurerm_resource_group",
+                    "name": "example",
+                    "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                    "schema_version": 0,
+                    "values": {
+                        "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                        "location": "westeurope",
+                        "name": "example-resources",
+                        "tags": {},
+                        "timeouts": null
+                    },
+                    "sensitive_values": {
+                        "tags": {}
+                    }
+                }
+            ]
+        }
+    },
+    "resource_drift": [
+        {
+            "address": "azurerm_app_service.example",
+            "mode": "managed",
+            "type": "azurerm_app_service",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "update"
+                ],
+                "before": {
+                    "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "app_settings": {
+                        "SOME_KEY": "some-value"
+                    },
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "default_provider": "",
+                            "enabled": false,
+                            "facebook": [],
+                            "google": [],
+                            "issuer": "",
+                            "microsoft": [],
+                            "runtime_version": "",
+                            "token_refresh_extension_hours": 0,
+                            "token_store_enabled": false,
+                            "twitter": [],
+                            "unauthenticated_client_action": ""
+                        }
+                    ],
+                    "backup": [],
+                    "client_affinity_enabled": false,
+                    "client_cert_enabled": false,
+                    "client_cert_mode": "Required",
+                    "connection_string": [
+                        {
+                            "name": "Database",
+                            "type": "SQLServer",
+                            "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                        }
+                    ],
+                    "custom_domain_verification_id": "1AD6F17018B81B2676DF0E6D40C68B48614A9BC49C321E9B62F69F99432F4348",
+                    "default_site_hostname": "nattapon-app-service.azurewebsites.net",
+                    "enabled": true,
+                    "https_only": false,
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/sites/nattapon-app-service",
+                    "identity": [],
+                    "key_vault_reference_identity_id": "SystemAssigned",
+                    "location": "westeurope",
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system_level": "Off"
+                                }
+                            ],
+                            "detailed_error_messages_enabled": false,
+                            "failed_request_tracing_enabled": false,
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "nattapon-app-service",
+                    "outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "13.95.238.192"
+                    ],
+                    "outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+                    "possible_outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "104.40.197.237",
+                        "65.52.146.110",
+                        "104.40.248.68",
+                        "23.97.145.24",
+                        "40.115.55.232",
+                        "20.4.97.135",
+                        "20.4.97.217",
+                        "20.4.98.84",
+                        "20.4.98.143",
+                        "20.4.99.173",
+                        "20.4.99.188",
+                        "108.142.88.22",
+                        "108.142.88.23",
+                        "108.142.88.34",
+                        "108.142.88.35",
+                        "108.142.88.46",
+                        "108.142.88.68",
+                        "13.95.238.192"
+                    ],
+                    "possible_outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,104.40.197.237,65.52.146.110,104.40.248.68,23.97.145.24,40.115.55.232,20.4.97.135,20.4.97.217,20.4.98.84,20.4.98.143,20.4.99.173,20.4.99.188,108.142.88.22,108.142.88.23,108.142.88.34,108.142.88.35,108.142.88.46,108.142.88.68,13.95.238.192",
+                    "resource_group_name": "example-resources",
+                    "site_config": [
+                        {
+                            "acr_use_managed_identity_credentials": false,
+                            "acr_user_managed_identity_client_id": "",
+                            "always_on": false,
+                            "app_command_line": "",
+                            "auto_swap_slot_name": "",
+                            "cors": [
+                                {
+                                    "allowed_origins": [],
+                                    "support_credentials": false
+                                }
+                            ],
+                            "default_documents": null,
+                            "dotnet_framework_version": "v4.0",
+                            "ftps_state": "FtpsOnly",
+                            "health_check_path": "",
+                            "http2_enabled": false,
+                            "ip_restriction": [],
+                            "java_container": "",
+                            "java_container_version": "",
+                            "java_version": "",
+                            "linux_fx_version": "",
+                            "local_mysql_enabled": false,
+                            "managed_pipeline_mode": "Integrated",
+                            "min_tls_version": "1.2",
+                            "number_of_workers": 1,
+                            "php_version": "",
+                            "python_version": "",
+                            "remote_debugging_enabled": false,
+                            "remote_debugging_version": "VS2022",
+                            "scm_ip_restriction": [],
+                            "scm_type": "LocalGit",
+                            "scm_use_main_ip_restriction": false,
+                            "use_32_bit_worker_process": false,
+                            "vnet_route_all_enabled": false,
+                            "websockets_enabled": false,
+                            "windows_fx_version": ""
+                        }
+                    ],
+                    "site_credential": [
+                        {
+                            "password": "kwJiBCShPoXhrWgu8dhHcp0EqHoAgkY2EWLQjmgSSlazKGJkjJkkWN7br6or",
+                            "username": "$nattapon-app-service"
+                        }
+                    ],
+                    "source_control": [
+                        {
+                            "branch": "main",
+                            "manual_integration": false,
+                            "repo_url": "https://nattapon-app-service.scm.azurewebsites.net",
+                            "rollback_enabled": false,
+                            "use_mercurial": false
+                        }
+                    ],
+                    "storage_account": [],
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after": {
+                    "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "app_settings": {
+                        "SOME_KEY": "some-value"
+                    },
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "default_provider": "",
+                            "enabled": false,
+                            "facebook": [],
+                            "google": [],
+                            "issuer": "",
+                            "microsoft": [],
+                            "runtime_version": "",
+                            "token_refresh_extension_hours": 0,
+                            "token_store_enabled": false,
+                            "twitter": [],
+                            "unauthenticated_client_action": ""
+                        }
+                    ],
+                    "backup": [],
+                    "client_affinity_enabled": false,
+                    "client_cert_enabled": false,
+                    "client_cert_mode": "Required",
+                    "connection_string": [
+                        {
+                            "name": "Database",
+                            "type": "SQLServer",
+                            "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                        }
+                    ],
+                    "custom_domain_verification_id": "1AD6F17018B81B2676DF0E6D40C68B48614A9BC49C321E9B62F69F99432F4348",
+                    "default_site_hostname": "nattapon-app-service.azurewebsites.net",
+                    "enabled": true,
+                    "https_only": false,
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/sites/nattapon-app-service",
+                    "identity": [],
+                    "key_vault_reference_identity_id": "SystemAssigned",
+                    "location": "westeurope",
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system_level": "Off"
+                                }
+                            ],
+                            "detailed_error_messages_enabled": false,
+                            "failed_request_tracing_enabled": false,
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "nattapon-app-service",
+                    "outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "13.95.238.192"
+                    ],
+                    "outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+                    "possible_outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "104.40.197.237",
+                        "65.52.146.110",
+                        "104.40.248.68",
+                        "23.97.145.24",
+                        "40.115.55.232",
+                        "20.4.97.135",
+                        "20.4.97.217",
+                        "20.4.98.84",
+                        "20.4.98.143",
+                        "20.4.99.173",
+                        "20.4.99.188",
+                        "108.142.88.22",
+                        "108.142.88.23",
+                        "108.142.88.34",
+                        "108.142.88.35",
+                        "108.142.88.46",
+                        "108.142.88.68",
+                        "13.95.238.192"
+                    ],
+                    "possible_outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,104.40.197.237,65.52.146.110,104.40.248.68,23.97.145.24,40.115.55.232,20.4.97.135,20.4.97.217,20.4.98.84,20.4.98.143,20.4.99.173,20.4.99.188,108.142.88.22,108.142.88.23,108.142.88.34,108.142.88.35,108.142.88.46,108.142.88.68,13.95.238.192",
+                    "resource_group_name": "example-resources",
+                    "site_config": [
+                        {
+                            "acr_use_managed_identity_credentials": false,
+                            "acr_user_managed_identity_client_id": "",
+                            "always_on": false,
+                            "app_command_line": "",
+                            "auto_swap_slot_name": "",
+                            "cors": [
+                                {
+                                    "allowed_origins": [],
+                                    "support_credentials": false
+                                }
+                            ],
+                            "default_documents": [],
+                            "dotnet_framework_version": "v4.0",
+                            "ftps_state": "FtpsOnly",
+                            "health_check_path": "",
+                            "http2_enabled": false,
+                            "ip_restriction": [],
+                            "java_container": "",
+                            "java_container_version": "",
+                            "java_version": "",
+                            "linux_fx_version": "",
+                            "local_mysql_enabled": false,
+                            "managed_pipeline_mode": "Integrated",
+                            "min_tls_version": "1.2",
+                            "number_of_workers": 1,
+                            "php_version": "",
+                            "python_version": "",
+                            "remote_debugging_enabled": false,
+                            "remote_debugging_version": "VS2022",
+                            "scm_ip_restriction": [],
+                            "scm_type": "LocalGit",
+                            "scm_use_main_ip_restriction": false,
+                            "use_32_bit_worker_process": false,
+                            "vnet_route_all_enabled": false,
+                            "websockets_enabled": false,
+                            "windows_fx_version": ""
+                        }
+                    ],
+                    "site_credential": [
+                        {
+                            "password": "kwJiBCShPoXhrWgu8dhHcp0EqHoAgkY2EWLQjmgSSlazKGJkjJkkWN7br6or",
+                            "username": "$nattapon-app-service"
+                        }
+                    ],
+                    "source_control": [
+                        {
+                            "branch": "main",
+                            "manual_integration": false,
+                            "repo_url": "https://nattapon-app-service.scm.azurewebsites.net",
+                            "rollback_enabled": false,
+                            "use_mercurial": false
+                        }
+                    ],
+                    "storage_account": [],
+                    "tags": {},
+                    "timeouts": null
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "app_settings": {},
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "facebook": [],
+                            "google": [],
+                            "microsoft": [],
+                            "twitter": []
+                        }
+                    ],
+                    "backup": [],
+                    "connection_string": true,
+                    "identity": [],
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": []
+                                }
+                            ],
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "possible_outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "site_config": [
+                        {
+                            "cors": [
+                                {
+                                    "allowed_origins": []
+                                }
+                            ],
+                            "ip_restriction": [],
+                            "scm_ip_restriction": []
+                        }
+                    ],
+                    "site_credential": [
+                        {}
+                    ],
+                    "source_control": [
+                        {}
+                    ],
+                    "storage_account": []
+                },
+                "after_sensitive": {
+                    "app_settings": {},
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "facebook": [],
+                            "google": [],
+                            "microsoft": [],
+                            "twitter": []
+                        }
+                    ],
+                    "backup": [],
+                    "connection_string": true,
+                    "identity": [],
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": []
+                                }
+                            ],
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "possible_outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "site_config": [
+                        {
+                            "cors": [
+                                {
+                                    "allowed_origins": []
+                                }
+                            ],
+                            "default_documents": [],
+                            "ip_restriction": [],
+                            "scm_ip_restriction": []
+                        }
+                    ],
+                    "site_credential": [
+                        {}
+                    ],
+                    "source_control": [
+                        {}
+                    ],
+                    "storage_account": [],
+                    "tags": {}
+                }
+            }
+        },
+        {
+            "address": "azurerm_app_service_plan.example",
+            "mode": "managed",
+            "type": "azurerm_app_service_plan",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "update"
+                ],
+                "before": {
+                    "app_service_environment_id": "",
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "is_xenon": false,
+                    "kind": "Windows",
+                    "location": "westeurope",
+                    "maximum_elastic_worker_count": 1,
+                    "maximum_number_of_workers": 10,
+                    "name": "example-appserviceplan",
+                    "per_site_scaling": false,
+                    "reserved": false,
+                    "resource_group_name": "example-resources",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "size": "S1",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null,
+                    "zone_redundant": false
+                },
+                "after": {
+                    "app_service_environment_id": "",
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "is_xenon": false,
+                    "kind": "Windows",
+                    "location": "westeurope",
+                    "maximum_elastic_worker_count": 1,
+                    "maximum_number_of_workers": 10,
+                    "name": "example-appserviceplan",
+                    "per_site_scaling": false,
+                    "reserved": false,
+                    "resource_group_name": "example-resources",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "size": "S1",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "tags": {},
+                    "timeouts": null,
+                    "zone_redundant": false
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "sku": [
+                        {}
+                    ]
+                },
+                "after_sensitive": {
+                    "sku": [
+                        {}
+                    ],
+                    "tags": {}
+                }
+            }
+        },
+        {
+            "address": "azurerm_resource_group.example",
+            "mode": "managed",
+            "type": "azurerm_resource_group",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "update"
+                ],
+                "before": {
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                    "location": "westeurope",
+                    "name": "example-resources",
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after": {
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                    "location": "westeurope",
+                    "name": "example-resources",
+                    "tags": {},
+                    "timeouts": null
+                },
+                "after_unknown": {},
+                "before_sensitive": {},
+                "after_sensitive": {
+                    "tags": {}
+                }
+            }
+        }
+    ],
+    "resource_changes": [
+        {
+            "address": "azurerm_app_service.example",
+            "mode": "managed",
+            "type": "azurerm_app_service",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "delete",
+                    "create"
+                ],
+                "before": {
+                    "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "app_settings": {
+                        "SOME_KEY": "some-value"
+                    },
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "default_provider": "",
+                            "enabled": false,
+                            "facebook": [],
+                            "google": [],
+                            "issuer": "",
+                            "microsoft": [],
+                            "runtime_version": "",
+                            "token_refresh_extension_hours": 0,
+                            "token_store_enabled": false,
+                            "twitter": [],
+                            "unauthenticated_client_action": ""
+                        }
+                    ],
+                    "backup": [],
+                    "client_affinity_enabled": false,
+                    "client_cert_enabled": false,
+                    "client_cert_mode": "Required",
+                    "connection_string": [
+                        {
+                            "name": "Database",
+                            "type": "SQLServer",
+                            "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                        }
+                    ],
+                    "custom_domain_verification_id": "1AD6F17018B81B2676DF0E6D40C68B48614A9BC49C321E9B62F69F99432F4348",
+                    "default_site_hostname": "nattapon-app-service.azurewebsites.net",
+                    "enabled": true,
+                    "https_only": false,
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/sites/nattapon-app-service",
+                    "identity": [],
+                    "key_vault_reference_identity_id": "SystemAssigned",
+                    "location": "westeurope",
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system_level": "Off"
+                                }
+                            ],
+                            "detailed_error_messages_enabled": false,
+                            "failed_request_tracing_enabled": false,
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "name": "nattapon-app-service",
+                    "outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "13.95.238.192"
+                    ],
+                    "outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+                    "possible_outbound_ip_address_list": [
+                        "13.95.237.248",
+                        "13.95.232.92",
+                        "13.95.235.177",
+                        "13.95.238.129",
+                        "104.40.197.237",
+                        "65.52.146.110",
+                        "104.40.248.68",
+                        "23.97.145.24",
+                        "40.115.55.232",
+                        "20.4.97.135",
+                        "20.4.97.217",
+                        "20.4.98.84",
+                        "20.4.98.143",
+                        "20.4.99.173",
+                        "20.4.99.188",
+                        "108.142.88.22",
+                        "108.142.88.23",
+                        "108.142.88.34",
+                        "108.142.88.35",
+                        "108.142.88.46",
+                        "108.142.88.68",
+                        "13.95.238.192"
+                    ],
+                    "possible_outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,104.40.197.237,65.52.146.110,104.40.248.68,23.97.145.24,40.115.55.232,20.4.97.135,20.4.97.217,20.4.98.84,20.4.98.143,20.4.99.173,20.4.99.188,108.142.88.22,108.142.88.23,108.142.88.34,108.142.88.35,108.142.88.46,108.142.88.68,13.95.238.192",
+                    "resource_group_name": "example-resources",
+                    "site_config": [
+                        {
+                            "acr_use_managed_identity_credentials": false,
+                            "acr_user_managed_identity_client_id": "",
+                            "always_on": false,
+                            "app_command_line": "",
+                            "auto_swap_slot_name": "",
+                            "cors": [
+                                {
+                                    "allowed_origins": [],
+                                    "support_credentials": false
+                                }
+                            ],
+                            "default_documents": [],
+                            "dotnet_framework_version": "v4.0",
+                            "ftps_state": "FtpsOnly",
+                            "health_check_path": "",
+                            "http2_enabled": false,
+                            "ip_restriction": [],
+                            "java_container": "",
+                            "java_container_version": "",
+                            "java_version": "",
+                            "linux_fx_version": "",
+                            "local_mysql_enabled": false,
+                            "managed_pipeline_mode": "Integrated",
+                            "min_tls_version": "1.2",
+                            "number_of_workers": 1,
+                            "php_version": "",
+                            "python_version": "",
+                            "remote_debugging_enabled": false,
+                            "remote_debugging_version": "VS2022",
+                            "scm_ip_restriction": [],
+                            "scm_type": "LocalGit",
+                            "scm_use_main_ip_restriction": false,
+                            "use_32_bit_worker_process": false,
+                            "vnet_route_all_enabled": false,
+                            "websockets_enabled": false,
+                            "windows_fx_version": ""
+                        }
+                    ],
+                    "site_credential": [
+                        {
+                            "password": "kwJiBCShPoXhrWgu8dhHcp0EqHoAgkY2EWLQjmgSSlazKGJkjJkkWN7br6or",
+                            "username": "$nattapon-app-service"
+                        }
+                    ],
+                    "source_control": [
+                        {
+                            "branch": "main",
+                            "manual_integration": false,
+                            "repo_url": "https://nattapon-app-service.scm.azurewebsites.net",
+                            "rollback_enabled": false,
+                            "use_mercurial": false
+                        }
+                    ],
+                    "storage_account": [],
+                    "tags": {},
+                    "timeouts": null
+                },
+                "after": {
+                    "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "app_settings": {
+                        "SOME_KEY": "some-value"
+                    },
+                    "backup": [],
+                    "client_affinity_enabled": false,
+                    "client_cert_enabled": false,
+                    "connection_string": [
+                        {
+                            "name": "Database",
+                            "type": "SQLServer",
+                            "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                        }
+                    ],
+                    "enabled": true,
+                    "https_only": false,
+                    "identity": [],
+                    "location": "westeurope",
+                    "name": "nattapon-app-service-01",
+                    "resource_group_name": "example-resources",
+                    "site_config": [
+                        {
+                            "acr_use_managed_identity_credentials": false,
+                            "acr_user_managed_identity_client_id": null,
+                            "always_on": false,
+                            "app_command_line": null,
+                            "auto_swap_slot_name": null,
+                            "default_documents": null,
+                            "dotnet_framework_version": "v4.0",
+                            "health_check_path": null,
+                            "http2_enabled": false,
+                            "java_container": null,
+                            "java_container_version": null,
+                            "java_version": null,
+                            "php_version": null,
+                            "python_version": null,
+                            "remote_debugging_enabled": false,
+                            "scm_type": "LocalGit",
+                            "scm_use_main_ip_restriction": false,
+                            "use_32_bit_worker_process": null
+                        }
+                    ],
+                    "tags": null,
+                    "timeouts": null
+                },
+                "after_unknown": {
+                    "app_settings": {},
+                    "auth_settings": true,
+                    "backup": [],
+                    "client_cert_mode": true,
+                    "connection_string": [
+                        {}
+                    ],
+                    "custom_domain_verification_id": true,
+                    "default_site_hostname": true,
+                    "id": true,
+                    "identity": [],
+                    "key_vault_reference_identity_id": true,
+                    "logs": true,
+                    "outbound_ip_address_list": true,
+                    "outbound_ip_addresses": true,
+                    "possible_outbound_ip_address_list": true,
+                    "possible_outbound_ip_addresses": true,
+                    "site_config": [
+                        {
+                            "cors": true,
+                            "ftps_state": true,
+                            "ip_restriction": true,
+                            "linux_fx_version": true,
+                            "local_mysql_enabled": true,
+                            "managed_pipeline_mode": true,
+                            "min_tls_version": true,
+                            "number_of_workers": true,
+                            "remote_debugging_version": true,
+                            "scm_ip_restriction": true,
+                            "vnet_route_all_enabled": true,
+                            "websockets_enabled": true,
+                            "windows_fx_version": true
+                        }
+                    ],
+                    "site_credential": true,
+                    "source_control": true,
+                    "storage_account": true
+                },
+                "before_sensitive": {
+                    "app_settings": {},
+                    "auth_settings": [
+                        {
+                            "active_directory": [],
+                            "additional_login_params": {},
+                            "allowed_external_redirect_urls": [],
+                            "facebook": [],
+                            "google": [],
+                            "microsoft": [],
+                            "twitter": []
+                        }
+                    ],
+                    "backup": [],
+                    "connection_string": true,
+                    "identity": [],
+                    "logs": [
+                        {
+                            "application_logs": [
+                                {
+                                    "azure_blob_storage": []
+                                }
+                            ],
+                            "http_logs": [
+                                {
+                                    "azure_blob_storage": [],
+                                    "file_system": []
+                                }
+                            ]
+                        }
+                    ],
+                    "outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "possible_outbound_ip_address_list": [
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false,
+                        false
+                    ],
+                    "site_config": [
+                        {
+                            "cors": [
+                                {
+                                    "allowed_origins": []
+                                }
+                            ],
+                            "default_documents": [],
+                            "ip_restriction": [],
+                            "scm_ip_restriction": []
+                        }
+                    ],
+                    "site_credential": [
+                        {}
+                    ],
+                    "source_control": [
+                        {}
+                    ],
+                    "storage_account": [],
+                    "tags": {}
+                },
+                "after_sensitive": {
+                    "app_settings": {},
+                    "auth_settings": [],
+                    "backup": [],
+                    "connection_string": true,
+                    "identity": [],
+                    "logs": [],
+                    "outbound_ip_address_list": [],
+                    "possible_outbound_ip_address_list": [],
+                    "site_config": [
+                        {
+                            "cors": [],
+                            "ip_restriction": [],
+                            "scm_ip_restriction": []
+                        }
+                    ],
+                    "site_credential": [],
+                    "source_control": [],
+                    "storage_account": []
+                },
+                "replace_paths": [
+                    [
+                        "name"
+                    ]
+                ]
+            },
+            "action_reason": "replace_because_cannot_update"
+        },
+        {
+            "address": "azurerm_app_service_plan.example",
+            "mode": "managed",
+            "type": "azurerm_app_service_plan",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "no-op"
+                ],
+                "before": {
+                    "app_service_environment_id": "",
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "is_xenon": false,
+                    "kind": "Windows",
+                    "location": "westeurope",
+                    "maximum_elastic_worker_count": 1,
+                    "maximum_number_of_workers": 10,
+                    "name": "example-appserviceplan",
+                    "per_site_scaling": false,
+                    "reserved": false,
+                    "resource_group_name": "example-resources",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "size": "S1",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "tags": {},
+                    "timeouts": null,
+                    "zone_redundant": false
+                },
+                "after": {
+                    "app_service_environment_id": "",
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                    "is_xenon": false,
+                    "kind": "Windows",
+                    "location": "westeurope",
+                    "maximum_elastic_worker_count": 1,
+                    "maximum_number_of_workers": 10,
+                    "name": "example-appserviceplan",
+                    "per_site_scaling": false,
+                    "reserved": false,
+                    "resource_group_name": "example-resources",
+                    "sku": [
+                        {
+                            "capacity": 1,
+                            "size": "S1",
+                            "tier": "Standard"
+                        }
+                    ],
+                    "tags": {},
+                    "timeouts": null,
+                    "zone_redundant": false
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "sku": [
+                        {}
+                    ],
+                    "tags": {}
+                },
+                "after_sensitive": {
+                    "sku": [
+                        {}
+                    ],
+                    "tags": {}
+                }
+            }
+        },
+        {
+            "address": "azurerm_resource_group.example",
+            "mode": "managed",
+            "type": "azurerm_resource_group",
+            "name": "example",
+            "provider_name": "registry.terraform.io/hashicorp/azurerm",
+            "change": {
+                "actions": [
+                    "no-op"
+                ],
+                "before": {
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                    "location": "westeurope",
+                    "name": "example-resources",
+                    "tags": {},
+                    "timeouts": null
+                },
+                "after": {
+                    "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                    "location": "westeurope",
+                    "name": "example-resources",
+                    "tags": {},
+                    "timeouts": null
+                },
+                "after_unknown": {},
+                "before_sensitive": {
+                    "tags": {}
+                },
+                "after_sensitive": {
+                    "tags": {}
+                }
+            }
+        }
+    ],
+    "output_changes": {
+        "webapp_ips": {
+            "actions": [
+                "update"
+            ],
+            "before": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        },
+        "webapp_url": {
+            "actions": [
+                "update"
+            ],
+            "before": "nattapon-app-service.azurewebsites.net",
+            "after_unknown": true,
+            "before_sensitive": false,
+            "after_sensitive": false
+        }
+    },
+    "prior_state": {
+        "format_version": "1.0",
+        "terraform_version": "1.10.5",
+        "values": {
+            "outputs": {
+                "webapp_ips": {
+                    "sensitive": false,
+                    "value": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+                    "type": "string"
+                },
+                "webapp_url": {
+                    "sensitive": false,
+                    "value": "nattapon-app-service.azurewebsites.net",
+                    "type": "string"
+                }
+            },
+            "root_module": {
+                "resources": [
+                    {
+                        "address": "azurerm_app_service.example",
+                        "mode": "managed",
+                        "type": "azurerm_app_service",
+                        "name": "example",
+                        "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                        "schema_version": 0,
+                        "values": {
+                            "app_service_plan_id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                            "app_settings": {
+                                "SOME_KEY": "some-value"
+                            },
+                            "auth_settings": [
+                                {
+                                    "active_directory": [],
+                                    "additional_login_params": {},
+                                    "allowed_external_redirect_urls": [],
+                                    "default_provider": "",
+                                    "enabled": false,
+                                    "facebook": [],
+                                    "google": [],
+                                    "issuer": "",
+                                    "microsoft": [],
+                                    "runtime_version": "",
+                                    "token_refresh_extension_hours": 0,
+                                    "token_store_enabled": false,
+                                    "twitter": [],
+                                    "unauthenticated_client_action": ""
+                                }
+                            ],
+                            "backup": [],
+                            "client_affinity_enabled": false,
+                            "client_cert_enabled": false,
+                            "client_cert_mode": "Required",
+                            "connection_string": [
+                                {
+                                    "name": "Database",
+                                    "type": "SQLServer",
+                                    "value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                                }
+                            ],
+                            "custom_domain_verification_id": "1AD6F17018B81B2676DF0E6D40C68B48614A9BC49C321E9B62F69F99432F4348",
+                            "default_site_hostname": "nattapon-app-service.azurewebsites.net",
+                            "enabled": true,
+                            "https_only": false,
+                            "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/sites/nattapon-app-service",
+                            "identity": [],
+                            "key_vault_reference_identity_id": "SystemAssigned",
+                            "location": "westeurope",
+                            "logs": [
+                                {
+                                    "application_logs": [
+                                        {
+                                            "azure_blob_storage": [],
+                                            "file_system_level": "Off"
+                                        }
+                                    ],
+                                    "detailed_error_messages_enabled": false,
+                                    "failed_request_tracing_enabled": false,
+                                    "http_logs": [
+                                        {
+                                            "azure_blob_storage": [],
+                                            "file_system": []
+                                        }
+                                    ]
+                                }
+                            ],
+                            "name": "nattapon-app-service",
+                            "outbound_ip_address_list": [
+                                "13.95.237.248",
+                                "13.95.232.92",
+                                "13.95.235.177",
+                                "13.95.238.129",
+                                "13.95.238.192"
+                            ],
+                            "outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,13.95.238.192",
+                            "possible_outbound_ip_address_list": [
+                                "13.95.237.248",
+                                "13.95.232.92",
+                                "13.95.235.177",
+                                "13.95.238.129",
+                                "104.40.197.237",
+                                "65.52.146.110",
+                                "104.40.248.68",
+                                "23.97.145.24",
+                                "40.115.55.232",
+                                "20.4.97.135",
+                                "20.4.97.217",
+                                "20.4.98.84",
+                                "20.4.98.143",
+                                "20.4.99.173",
+                                "20.4.99.188",
+                                "108.142.88.22",
+                                "108.142.88.23",
+                                "108.142.88.34",
+                                "108.142.88.35",
+                                "108.142.88.46",
+                                "108.142.88.68",
+                                "13.95.238.192"
+                            ],
+                            "possible_outbound_ip_addresses": "13.95.237.248,13.95.232.92,13.95.235.177,13.95.238.129,104.40.197.237,65.52.146.110,104.40.248.68,23.97.145.24,40.115.55.232,20.4.97.135,20.4.97.217,20.4.98.84,20.4.98.143,20.4.99.173,20.4.99.188,108.142.88.22,108.142.88.23,108.142.88.34,108.142.88.35,108.142.88.46,108.142.88.68,13.95.238.192",
+                            "resource_group_name": "example-resources",
+                            "site_config": [
+                                {
+                                    "acr_use_managed_identity_credentials": false,
+                                    "acr_user_managed_identity_client_id": "",
+                                    "always_on": false,
+                                    "app_command_line": "",
+                                    "auto_swap_slot_name": "",
+                                    "cors": [
+                                        {
+                                            "allowed_origins": [],
+                                            "support_credentials": false
+                                        }
+                                    ],
+                                    "default_documents": [],
+                                    "dotnet_framework_version": "v4.0",
+                                    "ftps_state": "FtpsOnly",
+                                    "health_check_path": "",
+                                    "http2_enabled": false,
+                                    "ip_restriction": [],
+                                    "java_container": "",
+                                    "java_container_version": "",
+                                    "java_version": "",
+                                    "linux_fx_version": "",
+                                    "local_mysql_enabled": false,
+                                    "managed_pipeline_mode": "Integrated",
+                                    "min_tls_version": "1.2",
+                                    "number_of_workers": 1,
+                                    "php_version": "",
+                                    "python_version": "",
+                                    "remote_debugging_enabled": false,
+                                    "remote_debugging_version": "VS2022",
+                                    "scm_ip_restriction": [],
+                                    "scm_type": "LocalGit",
+                                    "scm_use_main_ip_restriction": false,
+                                    "use_32_bit_worker_process": false,
+                                    "vnet_route_all_enabled": false,
+                                    "websockets_enabled": false,
+                                    "windows_fx_version": ""
+                                }
+                            ],
+                            "site_credential": [
+                                {
+                                    "password": "kwJiBCShPoXhrWgu8dhHcp0EqHoAgkY2EWLQjmgSSlazKGJkjJkkWN7br6or",
+                                    "username": "$nattapon-app-service"
+                                }
+                            ],
+                            "source_control": [
+                                {
+                                    "branch": "main",
+                                    "manual_integration": false,
+                                    "repo_url": "https://nattapon-app-service.scm.azurewebsites.net",
+                                    "rollback_enabled": false,
+                                    "use_mercurial": false
+                                }
+                            ],
+                            "storage_account": [],
+                            "tags": {},
+                            "timeouts": null
+                        },
+                        "sensitive_values": {
+                            "app_settings": {},
+                            "auth_settings": [
+                                {
+                                    "active_directory": [],
+                                    "additional_login_params": {},
+                                    "allowed_external_redirect_urls": [],
+                                    "facebook": [],
+                                    "google": [],
+                                    "microsoft": [],
+                                    "twitter": []
+                                }
+                            ],
+                            "backup": [],
+                            "connection_string": true,
+                            "identity": [],
+                            "logs": [
+                                {
+                                    "application_logs": [
+                                        {
+                                            "azure_blob_storage": []
+                                        }
+                                    ],
+                                    "http_logs": [
+                                        {
+                                            "azure_blob_storage": [],
+                                            "file_system": []
+                                        }
+                                    ]
+                                }
+                            ],
+                            "outbound_ip_address_list": [
+                                false,
+                                false,
+                                false,
+                                false,
+                                false
+                            ],
+                            "possible_outbound_ip_address_list": [
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false,
+                                false
+                            ],
+                            "site_config": [
+                                {
+                                    "cors": [
+                                        {
+                                            "allowed_origins": []
+                                        }
+                                    ],
+                                    "default_documents": [],
+                                    "ip_restriction": [],
+                                    "scm_ip_restriction": []
+                                }
+                            ],
+                            "site_credential": [
+                                {}
+                            ],
+                            "source_control": [
+                                {}
+                            ],
+                            "storage_account": [],
+                            "tags": {}
+                        },
+                        "depends_on": [
+                            "azurerm_app_service_plan.example",
+                            "azurerm_resource_group.example"
+                        ]
+                    },
+                    {
+                        "address": "azurerm_app_service_plan.example",
+                        "mode": "managed",
+                        "type": "azurerm_app_service_plan",
+                        "name": "example",
+                        "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                        "schema_version": 0,
+                        "values": {
+                            "app_service_environment_id": "",
+                            "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources/providers/Microsoft.Web/serverfarms/example-appserviceplan",
+                            "is_xenon": false,
+                            "kind": "Windows",
+                            "location": "westeurope",
+                            "maximum_elastic_worker_count": 1,
+                            "maximum_number_of_workers": 10,
+                            "name": "example-appserviceplan",
+                            "per_site_scaling": false,
+                            "reserved": false,
+                            "resource_group_name": "example-resources",
+                            "sku": [
+                                {
+                                    "capacity": 1,
+                                    "size": "S1",
+                                    "tier": "Standard"
+                                }
+                            ],
+                            "tags": {},
+                            "timeouts": null,
+                            "zone_redundant": false
+                        },
+                        "sensitive_values": {
+                            "sku": [
+                                {}
+                            ],
+                            "tags": {}
+                        },
+                        "depends_on": [
+                            "azurerm_resource_group.example"
+                        ]
+                    },
+                    {
+                        "address": "azurerm_resource_group.example",
+                        "mode": "managed",
+                        "type": "azurerm_resource_group",
+                        "name": "example",
+                        "provider_name": "registry.terraform.io/hashicorp/azurerm",
+                        "schema_version": 0,
+                        "values": {
+                            "id": "/subscriptions/5bb9cc68-8927-4f2f-ba3e-c2ddea7947ca/resourceGroups/example-resources",
+                            "location": "westeurope",
+                            "name": "example-resources",
+                            "tags": {},
+                            "timeouts": null
+                        },
+                        "sensitive_values": {
+                            "tags": {}
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "configuration": {
+        "provider_config": {
+            "azurerm": {
+                "name": "azurerm",
+                "full_name": "registry.terraform.io/hashicorp/azurerm",
+                "version_constraint": "3.0.0",
+                "expressions": {
+                    "features": [
+                        {}
+                    ]
+                }
+            }
+        },
+        "root_module": {
+            "outputs": {
+                "webapp_ips": {
+                    "expression": {
+                        "references": [
+                            "azurerm_app_service.example.outbound_ip_addresses",
+                            "azurerm_app_service.example"
+                        ]
+                    }
+                },
+                "webapp_url": {
+                    "expression": {
+                        "references": [
+                            "azurerm_app_service.example.default_site_hostname",
+                            "azurerm_app_service.example"
+                        ]
+                    }
+                }
+            },
+            "resources": [
+                {
+                    "address": "azurerm_app_service.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "app_service_plan_id": {
+                            "references": [
+                                "azurerm_app_service_plan.example.id",
+                                "azurerm_app_service_plan.example"
+                            ]
+                        },
+                        "app_settings": {
+                            "constant_value": {
+                                "SOME_KEY": "some-value"
+                            }
+                        },
+                        "connection_string": [
+                            {
+                                "name": {
+                                    "constant_value": "Database"
+                                },
+                                "type": {
+                                    "constant_value": "SQLServer"
+                                },
+                                "value": {
+                                    "constant_value": "Server=some-server.mydomain.com;Integrated Security=SSPI"
+                                }
+                            }
+                        ],
+                        "location": {
+                            "references": [
+                                "azurerm_resource_group.example.location",
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.app_service_name"
+                            ]
+                        },
+                        "resource_group_name": {
+                            "references": [
+                                "azurerm_resource_group.example.name",
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "site_config": [
+                            {
+                                "dotnet_framework_version": {
+                                    "constant_value": "v4.0"
+                                },
+                                "scm_type": {
+                                    "constant_value": "LocalGit"
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "azurerm_app_service_plan.example",
+                    "mode": "managed",
+                    "type": "azurerm_app_service_plan",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "location": {
+                            "references": [
+                                "azurerm_resource_group.example.location",
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.app_service_plan_name"
+                            ]
+                        },
+                        "resource_group_name": {
+                            "references": [
+                                "azurerm_resource_group.example.name",
+                                "azurerm_resource_group.example"
+                            ]
+                        },
+                        "sku": [
+                            {
+                                "size": {
+                                    "constant_value": "S1"
+                                },
+                                "tier": {
+                                    "constant_value": "Standard"
+                                }
+                            }
+                        ]
+                    },
+                    "schema_version": 0
+                },
+                {
+                    "address": "azurerm_resource_group.example",
+                    "mode": "managed",
+                    "type": "azurerm_resource_group",
+                    "name": "example",
+                    "provider_config_key": "azurerm",
+                    "expressions": {
+                        "location": {
+                            "references": [
+                                "var.resource_group_location"
+                            ]
+                        },
+                        "name": {
+                            "references": [
+                                "var.resource_group_name"
+                            ]
+                        }
+                    },
+                    "schema_version": 0
+                }
+            ],
+            "variables": {
+                "app_service_name": {
+                    "description": "value of the app service name"
+                },
+                "app_service_plan_name": {
+                    "description": "value of the app service plan name"
+                },
+                "resource_group_location": {
+                    "description": "value of the resource group location"
+                },
+                "resource_group_name": {
+                    "description": "value of the resource group name"
+                }
+            }
+        }
+    },
+    "relevant_attributes": [
+        {
+            "resource": "azurerm_resource_group.example",
+            "attribute": [
+                "name"
+            ]
+        },
+        {
+            "resource": "azurerm_resource_group.example",
+            "attribute": [
+                "location"
+            ]
+        },
+        {
+            "resource": "azurerm_app_service_plan.example",
+            "attribute": [
+                "id"
+            ]
+        },
+        {
+            "resource": "azurerm_app_service.example",
+            "attribute": [
+                "outbound_ip_addresses"
+            ]
+        },
+        {
+            "resource": "azurerm_app_service.example",
+            "attribute": [
+                "default_site_hostname"
+            ]
+        }
+    ],
+    "timestamp": "2025-02-18T14:02:26Z",
+    "applyable": true,
+    "complete": true,
+    "errored": false
+}
