@@ -13,3 +13,17 @@ terraform workspace list
 
 terraform plan -out test.tfplan
 terraform apply test.tfplan
+
+# create prod workspace
+terraform workspace new prod
+
+terraform workspace list
+
+terraform plan -out prod.tfplan
+terraform apply prod.tfplan
+
+# 
+terraform workspace select dev
+
+# 
+terraform workspace -h
